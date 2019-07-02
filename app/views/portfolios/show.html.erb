@@ -1,0 +1,13 @@
+<%= image_tag @portfolio.main_image %>
+
+<p id="notice"><%= notice %></p>
+
+<h1><%= @portfolio.title %></h1>
+
+<em><%= @portfolio.subtitle %></em>
+
+<p><%= @portfolio.body %></p>
+
+<%= link_to "Edit portfolio", edit_portfolio_path(@portfolio) %>
+<br>
+<%= link_to "Delete portfolio", portfolio_path(@portfolio), method: 'delete', data: { confirm: 'Are you sure?' } %>
