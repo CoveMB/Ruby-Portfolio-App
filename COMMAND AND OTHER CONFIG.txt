@@ -1,0 +1,39 @@
+_> To start a new rails app:
+
+docker-compose run web rails new . --force --no-deps --database=postgresql
+
+
+_> In In config/database.yml:
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: db
+  username: postgres
+  password: docker
+  pool: 5
+
+development:
+  <<: *default
+  database: myapp_development
+
+
+test:
+  <<: *default
+  database: myapp_test
+
+
+_> In config/environements/development.rb:
+
+(at the end of the file) change:
+config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+
+for:
+config.file_watcher = ActiveSupport::FileUpdateChecker
+
+
+_> Initiate the database:
+
+docker exec -it name_of_app_container_web_1 bash
+
+rails db:create
