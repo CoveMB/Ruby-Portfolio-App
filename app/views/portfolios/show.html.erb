@@ -8,6 +8,6 @@
 
 <p><%= @portfolio.body %></p>
 
-<%= link_to "Edit portfolio", edit_portfolio_path(@portfolio) %>
+<%= link_to "Edit portfolio", portfolio_edit_path(@portfolio) %>
 <br>
 <%= link_to "Delete portfolio", portfolio_path(@portfolio), method: 'delete', data: { confirm: 'Are you sure?' } %>
