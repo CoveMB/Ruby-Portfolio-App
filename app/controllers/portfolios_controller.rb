@@ -5,6 +5,10 @@ class PortfoliosController < ApplicationController
     @portfolios = Portfolio.all
   end
 
+  def data_engineering
+    @portfolios = Portfolio.data_engineering
+  end
+
   def new
     @portfolio = Portfolio.new
   end
