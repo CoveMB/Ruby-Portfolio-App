@@ -26,7 +26,8 @@ puts "10 blog post created"
 5.times do |skill|
   Skill.create!(
     title: "Skill #{skill}",
-    percent_utilized: 15
+    percent_utilized: 15,
+    badge: "http://placehold.it/250x250"
   )
 end
 
