@@ -5,8 +5,13 @@ class PortfoliosController < ApplicationController
     @portfolios = Portfolio.all
   end
 
+  def data_engineering
+    @portfolios = Portfolio.data_engineering
+  end
+
   def new
     @portfolio = Portfolio.new
+    3.times { @portfolio.technologies.build }
   end
 
   def create
@@ -51,6 +56,6 @@ class PortfoliosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def portfolio_params
-      params.require(:portfolio).permit(:title, :subtitle, :body)
+      params.require(:portfolio).permit(:title, :subtitle, :body, technologies_attributes: [:name])
     end
 end

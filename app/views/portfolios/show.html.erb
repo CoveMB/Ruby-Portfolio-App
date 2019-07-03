@@ -8,6 +8,12 @@
 
 <p><%= @portfolio.body %></p>
 
+<h3>Technologies used</h3>
+
+<% @portfolio.technologies.each do |t| %>
+  <p><%= t.name %></p>
+<% end %>
+
 <%= link_to "Edit portfolio", portfolio_edit_path(@portfolio) %>
 <br>
 <%= link_to "Delete portfolio", portfolio_path(@portfolio), method: 'delete', data: { confirm: 'Are you sure?' } %>
