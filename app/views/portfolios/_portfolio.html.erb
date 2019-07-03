@@ -2,6 +2,6 @@
 <%= image_tag portfolio.thumb_image unless portfolio.thumb_image.nil? %>
 <h4><%= portfolio.subtitle %></h4>
 <p><%= portfolio.body %></p>
-<%= link_to "Edit portfolio", portfolio_edit_path(portfolio) %>
+<%= link_to "Edit portfolio", portfolio_edit_path(portfolio) if logged_in?(:site_admin) %>
 <br>
-<%= link_to "Delete portfolio", portfolio_path(portfolio), method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to "Delete portfolio", portfolio_path(portfolio), method: :delete, data: { confirm: 'Are you sure?' }if logged_in?(:site_admin) %>

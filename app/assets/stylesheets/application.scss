@@ -1,3 +1,5 @@
+@import 'bootstrap';
+
 /*
  * Globals
  */
@@ -29,9 +31,10 @@ html,
 body {
   height: 100%;
   font-family: 'Lato', sans-serif;
+  background-color: black;
 }
 body {
-  
+  color: #fff;
   text-align: center;
 }
 

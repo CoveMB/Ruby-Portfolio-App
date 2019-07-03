@@ -1,6 +1,6 @@
 <h1>Data Engineering Portfolio Items</h1>
 
-<%= link_to "Create New Porfofio", new_portfolio_path %>
+<%= link_to "Create New Porfofio", new_portfolio_path h if logged_in?(:site_admin) %>
 
 <% @portfolios.each do |portfolio| %>
   <h3><%= link_to portfolio.title , portfolio_show_path(portfolio) %></h3>

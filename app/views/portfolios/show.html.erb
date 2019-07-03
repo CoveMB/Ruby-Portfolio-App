@@ -14,6 +14,8 @@
   <p><%= t.name %></p>
 <% end %>
 
-<%= link_to "Edit portfolio", portfolio_edit_path(@portfolio) %>
+<%= link_to "Edit portfolio", portfolio_edit_path(@portfolio) if logged_in?(:site_admin) %>
 <br>
-<%= link_to "Delete portfolio", portfolio_path(@portfolio), method: 'delete', data: { confirm: 'Are you sure?' } %>
+<%= link_to "Delete portfolio", portfolio_path(@portfolio), method: 'delete', data: { confirm: 'Are you sure?' } if logged_in?(:site_admin) %>
+<br>
+<%= link_to 'Portfolios', portfolios_path%>
