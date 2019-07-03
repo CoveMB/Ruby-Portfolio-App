@@ -1,8 +1,10 @@
 class PortfoliosController < ApplicationController
   before_action :set_portfolio, only: [:show, :edit, :update, :destroy]
+  layout 'portfolio'
 
   def index
     @portfolios = Portfolio.all
+    @page_title = 'Things I did'
   end
 
   def data_engineering
@@ -26,9 +28,11 @@ class PortfoliosController < ApplicationController
   end
 
   def show
+    @page_title = @portfolio.title
   end
 
   def edit
+    3.times { @portfolio.technologies.build }
   end
 
   def update
@@ -56,6 +60,11 @@ class PortfoliosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def portfolio_params
-      params.require(:portfolio).permit(:title, :subtitle, :body, technologies_attributes: [:name])
+      params.require(:portfolio).permit(
+                                        :title,
+                                        :subtitle,
+                                        :body,
+                                        technologies_attributes: [:name]
+                                      )
     end
 end
