@@ -1,21 +1,33 @@
-<%= image_tag @portfolio.main_image %>
+<div class="container portfolio-container">
+  <div class="row">
+    <div class="col-md-7">
+      <a href='<%= portfolio_show_path(@portfolio) %>'>
+        <%= image_tag @portfolio.main_image unless @portfolio.main_image.nil? %>
+      </a>
+    </div>
 
-<p id="notice"><%= notice %></p>
+    <div class="col-md-5">
+      <h1><%= @portfolio.title %></h1>
 
-<h1><%= @portfolio.title %></h1>
+      <hr>
 
-<em><%= @portfolio.subtitle %></em>
+      <em><%= @portfolio.subtitle %></em>
 
-<p><%= @portfolio.body %></p>
+      <p><%= @portfolio.body %></p>
 
-<h3>Technologies used</h3>
+      <hr>
 
-<% @portfolio.technologies.each do |t| %>
-  <p><%= t.name %></p>
-<% end %>
+      <h3>Technologies Used:</h3>
 
-<%= link_to "Edit portfolio", portfolio_edit_path(@portfolio) if logged_in?(:site_admin) %>
-<br>
-<%= link_to "Delete portfolio", portfolio_path(@portfolio), method: 'delete', data: { confirm: 'Are you sure?' } if logged_in?(:site_admin) %>
-<br>
-<%= link_to 'Portfolios', portfolios_path%>
+      <% @portfolio.technologies.each do |t| %>
+      <p><%= t.name %></p>
+      <% end %>
+
+      <% if logged_in?(:site_admin) %>
+        <div class="">
+          <%= link_to "Edit Item", portfolio_edit_path(@portfolio), class: 'btn btn-warning' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
