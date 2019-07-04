@@ -12,7 +12,7 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
-    <%= render 'shared/nav', location: 'top' %>
+    <%= render 'shared/application_nav', location: 'top' %>
   <br>
     <%= source_helper('application') %>
   <br>
@@ -20,5 +20,6 @@
 
     <%= yield %>
 
+    <%= render "shared/application_footer" %>
   </body>
 </html>
