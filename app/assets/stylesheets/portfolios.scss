@@ -17,6 +17,21 @@ body {
 
 .navbar {
   margin-bottom: 0;
+  background-color: black;
+}
+
+.navbar-toggler{
+  color: white;
+  background-color: white;
+}
+
+a {
+  color: white;
+}
+
+#navbarHeader{
+  background-color: black;
+  color: white;
 }
 
 .jumbotron {
