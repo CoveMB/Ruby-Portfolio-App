@@ -9,24 +9,33 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
 
-    <br>
-      <%= source_helper('blog') %>
-    <br>
-      <%= login_helper %>
+    <%= render 'shared/blog_nav' %>
 
-    <%= yield %>
+    <!-- start of blog header -->
+    <div class="blog-header">
+      <div class="container">
+        <h1 class="blog-title">My Blog</h1>
+        <p class="lead blog-description">An example blog template built with Bootstrap.</p>
+        <%= link_to 'Write a New Blog', new_blog_path if logged_in?(:site_admin) %>
+      </div>
+    </div>
+    <!-- end of blog header -->
 
-    <%= render 'shared/nav', location: 'bottom' %>
+    <div class="container">
 
-    <% if session[:source] %>
-       <p>Thanks for visiting me from <%= session[:source] %></p>
-    <% end %>
-    <%= debug(params) if Rails.env.development? %>
+      <div class="row">
 
-    <%= render "shared/application_footer" %>
-    
+        <%= yield %>
+
+        <%= render 'shared/blog_sidebar' %>
+      </div>
+
+        <%= source_helper("blog") %>
+    </div>
+    <div>
+        <%= render "shared/application_footer" %>
+    </div>
+
   </body>
 </html>
