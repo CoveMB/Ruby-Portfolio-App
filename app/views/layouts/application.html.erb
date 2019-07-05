@@ -11,8 +11,6 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
     <div class="site-wrapper">
       <div class="site-wrapper-inner">
         <div class="cover-container">
@@ -34,6 +32,9 @@
           <%= yield %>
 
           <%= render "shared/application_footer" %>
+
+          <%= alerts %>
+
         </div>
       </div>
     </div>
