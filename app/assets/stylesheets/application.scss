@@ -32,7 +32,6 @@ html,
 body {
   height: 100%;
   font-family: 'Lato', sans-serif;
-  background-color: black;
 }
 body {
   color: #fff;
@@ -77,7 +76,7 @@ h6, .h6 {
  */
 
 .masthead {
-  margin-bottom: 2rem;
+
 }
 
 .masthead-brand {
@@ -179,7 +178,6 @@ h6, .h6 {
 .card-block {
   color: black;
   text-align: left;
-  padding: 8px 15px 8px 15px;
 }
 
 .auth-links a {
@@ -212,8 +210,14 @@ h6, .h6 {
   z-index: -100;
   -webkit-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
-  background: image-url('home_bg.png') no-repeat;
+  // background: image-url('home_bg.jpeg') no-repeat;
   background-size: cover;
+}
+
+.cover-heading{
+  color: white;
+  font-size: 3rem;
+
 }
 
 .app-footer {

@@ -1,11 +1,11 @@
 
 <div class="col-md-4">
-<div class="card portfolio-box" data-id="<%= portfolio.id %>">
-<a href='<%= portfolio_show_path(portfolio) %>'>
-  <%= image_tag portfolio.thumb_image unless portfolio.thumb_image.nil? %>
-</a>
-<p class="card-text">
-  <span><%= link_to portfolio.title, portfolio_show_path(portfolio), class: "portfolio-title-link" %></span> &nbsp; | &nbsp; <%= portfolio.subtitle %> &nbsp; | &nbsp; <%= portfolio.position %>
-</p>
-</div>
+  <div class="card portfolio-box" data-id="<%= portfolio.id %>">
+    <a href='<%= portfolio_show_path(portfolio) %>'>
+      <%= image_tag portfolio_img(portfolio.thumb_image, 'thumb'), width: '100%' %>
+    </a>
+    <p class="card-text">
+      <span><%= link_to portfolio.title, portfolio_show_path(portfolio), class: "portfolio-title-link" %></span> &nbsp; | &nbsp; <%= portfolio.subtitle %> &nbsp; | &nbsp; <%= portfolio.position %>
+    </p>
+  </div>
 </div>
