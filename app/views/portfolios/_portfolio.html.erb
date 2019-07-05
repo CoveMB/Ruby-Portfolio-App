@@ -5,7 +5,7 @@
   <%= image_tag portfolio.thumb_image unless portfolio.thumb_image.nil? %>
 </a>
 <p class="card-text">
-  <span><%= link_to portfolio.title, portfolio_show_path(portfolio) %></span> <%= portfolio.subtitle %>
+  <span><%= link_to portfolio.title, portfolio_show_path(portfolio), class: "portfolio-title-link" %></span> &nbsp; | &nbsp; <%= portfolio.subtitle %> &nbsp; | &nbsp; <%= portfolio.position %>
 </p>
 </div>
 </div>

@@ -11,5 +11,9 @@ class Portfolio < ApplicationRecord
     where(subtitle: "Data Engineering")
   end
 
+  def self.by_position
+    order("position ASC")
+  end
+
   after_initialize :set_defaults
 end

@@ -4,7 +4,7 @@ class PortfoliosController < ApplicationController
   layout 'portfolio'
 
   def index
-    @portfolios = Portfolio.all
+    @portfolios = Portfolio.by_position
     @page_title = 'Things I did'
   end
 
