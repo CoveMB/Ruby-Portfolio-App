@@ -4,7 +4,7 @@ class PortfoliosController < ApplicationController
   layout 'portfolio'
 
   def index
-    @portfolios = Portfolio.by_position
+    @portfolios = Portfolio.with_attached_image.by_position
     @page_title = 'Things I did'
   end
 
@@ -72,6 +72,7 @@ class PortfoliosController < ApplicationController
                                         :title,
                                         :subtitle,
                                         :body,
+                                        :image,
                                         technologies_attributes: [:name]
                                       )
     end

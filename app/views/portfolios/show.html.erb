@@ -1,9 +1,9 @@
 <div class="container portfolio-container">
   <div class="row">
     <div class="col-md-7">
-      <a href='<%= portfolio_show_path(@portfolio) %>'>
-        <%= image_tag @portfolio.main_image unless @portfolio.main_image.nil? %>
-      </a>
+      <% if @portfolio.image.attached? %>
+      <%= image_tag @portfolio.image, width: '100%' %>
+      <% end %>
     </div>
 
     <div class="col-md-5">

@@ -7,8 +7,7 @@ class Portfolio < ApplicationRecord
 
   validates_presence_of :title, :subtitle, :body
 
-  mount_uploader :thumb_image, PortfolioUploader
-  mount_uploader :main_image, PortfolioUploader
+  has_one_attached :image
 
   def self.data_engineering
     where(subtitle: "Data Engineering")
