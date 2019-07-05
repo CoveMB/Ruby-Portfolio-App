@@ -1,5 +1,5 @@
 module PortfoliosHelper
-  def image_generator(height, width)
+  def image_generator(height:, width:)
     "http://placehold.it/#{height}x#{width}"
   end
 
@@ -12,7 +12,8 @@ module PortfoliosHelper
     end
   end
 
-  def portfolio_img img, type
+  def portfolio_img(img, type)
+    p img.class
     if img.model.main_image? || img.model.thumb_image?
       img
     elsif type == 'thumb'
