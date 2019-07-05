@@ -8,6 +8,13 @@ class PortfoliosController < ApplicationController
     @page_title = 'Things I did'
   end
 
+  def sort
+    params[:order].each do |key, value|
+      Portfolio.find(value[:id]).update(position: value[:position] )
+    end
+    render nothing: true
+  end
+
   def data_engineering
     @portfolios = Portfolio.data_engineering
   end
