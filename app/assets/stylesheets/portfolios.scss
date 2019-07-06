@@ -9,7 +9,7 @@ body {
 
 .navbar {
   margin-bottom: 0;
-  background-color: black;
+  background-color: #563d7c;
 }
 
 .navbar-brand:hover{
@@ -26,7 +26,7 @@ body {
 }
 
 #navbarHeader{
-  background-color: black;
+  background-color: #563d7c;
   color: white;
 }
 
@@ -52,7 +52,7 @@ body {
 .album {
   padding-top: 3rem;
   padding-bottom: 3rem;
-  background-color: #f7f7f7;
+  background-color: RGBA(86, 61, 124, 0.1);
 }
 
 .portfolio-title-link{
@@ -66,6 +66,30 @@ h4, .h4,
 h5, .h5,
 h6, .h6 {
   font-family: 'Roboto Slab', serif;
+}
+
+.portfolio-box{
+  -webkit-box-shadow: 1px 3px 6px #000000;
+          box-shadow: 1px 3px 6px #000000;
+  -webkit-transition-duration: 0.33s;
+       -o-transition-duration: 0.33s;
+          transition-duration: 0.33s;
+}
+
+.portfolio-box:hover{
+  -webkit-box-shadow: 2px 5px 8px #563d7c;
+          box-shadow: 2px 5px 8px #563d7c;
+  -webkit-transform: scale(1.022);
+      -ms-transform: scale(1.022);
+          transform: scale(1.022);
+}
+
+.portfolio-box:active{
+  -webkit-box-shadow: 0px 1px 2px #563d7c;
+          box-shadow: 0px 1px 2px #563d7c;
+  -webkit-transition-duration: 0.1s;
+       -o-transition-duration: 0.1s;
+          transition-duration: 0.1s;
 }
 
 .add-technology{

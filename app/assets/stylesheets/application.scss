@@ -264,3 +264,27 @@ h6, .h6 {
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
+.btn-about-custom{
+  -webkit-box-shadow: 1px 3px 6px #000000;
+          box-shadow: 1px 3px 6px #000000;
+  -webkit-transition-duration: 0.33s;
+       -o-transition-duration: 0.33s;
+          transition-duration: 0.33s;
+}
+
+.btn-about-custom:hover{
+  -webkit-box-shadow: 2px 6px 12px #000000;
+          box-shadow: 2px 6px 12px #000000;
+  -webkit-transform: scale(1.022);
+      -ms-transform: scale(1.022);
+          transform: scale(1.022);
+}
+
+.btn-about-custom:active{
+  -webkit-box-shadow: 0px 1px 2px #000000;
+          box-shadow: 0px 1px 2px #000000;
+  -webkit-transition-duration: 0.1s;
+       -o-transition-duration: 0.1s;
+          transition-duration: 0.1s;
+}
