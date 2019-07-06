@@ -67,7 +67,7 @@ h6, .h6 {
 
 /* Padding for spacing */
 .inner {
-  padding: 2rem;
+  padding: 1.25rem 2rem 2rem 2rem;
 }
 
 
@@ -202,7 +202,7 @@ h6, .h6 {
 
 #background {
   position: fixed;
-  top: 50%;
+  top: 70%;
   left: 50%;
   min-width: 100%;
   min-height: 100%;
@@ -211,8 +211,8 @@ h6, .h6 {
   z-index: -100;
   -webkit-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
-  // background: image-url('home_bg.jpeg') no-repeat;
-  background-size: cover;
+  background: image-url('home_bg.png') no-repeat;
+  background-size: 100% 100%;
 }
 
 .cover-heading{
@@ -241,6 +241,12 @@ h6, .h6 {
 .app-card-container {
   color: black;
   text-align: left;
+  margin-top: 120px;
+  -webkit-box-shadow: 1px 4px 10px #000000;
+          box-shadow: 1px 4px 10px #000000;
+  -webkit-transition-duration: 0.33s;
+       -o-transition-duration: 0.33s;
+          transition-duration: 0.33s;
 }
 
 .app-card-container > .card {
@@ -287,4 +293,16 @@ h6, .h6 {
   -webkit-transition-duration: 0.1s;
        -o-transition-duration: 0.1s;
           transition-duration: 0.1s;
+}
+
+.application a{
+  font-style: italic;
+  border-bottom: 1.5px solid #ffffff;
+  padding: 3px 5px 3px 5px;
+
+}
+
+.app-footer{
+  margin-bottom: 0px;
+  
 }

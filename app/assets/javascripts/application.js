@@ -23,3 +23,14 @@
 //= require turbolinks
 //= require_tree .
 //= require bootstrap-sprockets
+
+//
+// $(document).mouseup(function(e)
+// {
+//     var container = $("app-card-container");
+//
+//     if (!container.is(e.target) && container.has(e.target).length === 0)
+//     {
+//         container.hide();
+//     }
+// });

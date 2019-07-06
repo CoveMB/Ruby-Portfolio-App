@@ -24,13 +24,13 @@ User.create!(
 
 puts "1 admin user created"
 
-3.times do |topic|
-  Topic.create!(
-    title: "Topic #{topic}"
-  )
-end
+topics = ['Hip-Hop', 'Procurement', 'Insurance']
 
-puts "3 topics created"
+topics.each {|topic| Topic.create!(
+  title: topic,
+)}
+
+puts "Topics created"
 
 10.times do |blog|
   Blog.create!(

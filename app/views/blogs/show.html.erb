@@ -3,10 +3,10 @@
 
 <h2><%= @blog.title %></h2>
 
-<%= link_to 'Edit', edit_blog_path(@blog) if logged_in?(:site_admin) %>
+<%= render 'blog_breadcrumb' %>
 
 <p>
-<%= @blog.body %>
+<%= markdown(@blog.body) %>
 </p>
 
 <div id="comments" data-blog-id="<%= @blog.id %>">

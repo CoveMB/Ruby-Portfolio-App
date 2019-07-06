@@ -1,20 +1,29 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy, :toggle_status]
+  before_action :set_sidebar_topics, except: [:update, :create, :destroy, :toggle_status]
   access all: [:show, :index], user: {except: [:destroy, :new, :update, :edit]}, site_admin: :all
   layout "blog"
 
   # GET /blogs
   # GET /blogs.json
   def index
-    @blogs = Blog.page(params[:page]).per(5)
+    if logged_in?(:site_admin)
+      @blogs = Blog.recent.page(params[:page]).per(5)
+    else
+      @blogs = Blog.recent.published.page(params[:page]).per(5)
+    end
     @page_title = 'Articles I wrote'
   end
 
   # GET /blogs/1
   # GET /blogs/1.json
   def show
-    @blog = Blog.includes(:comments).friendly.find(params[:id])
-    @comment = Comment.new
+    if logged_in?(:site_admin)
+      @blog = Blog.includes(:comments).friendly.find(params[:id])
+      @comment = Comment.new
+    else
+      redirect_to blogs_path, notice: 'The blog post you are looking for if not published yet'
+    end
     @page_title = @blog.title
   end
 
@@ -73,8 +82,12 @@ class BlogsController < ApplicationController
       @blog = Blog.friendly.find(params[:id])
     end
 
+    def set_sidebar_topics
+      @side_bar_topics = Topic.with_blogs
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def blog_params
-      params.require(:blog).permit(:title, :body)
+      params.require(:blog).permit(:title, :body, :topic_id, :status)
     end
 end

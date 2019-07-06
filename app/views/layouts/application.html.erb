@@ -6,6 +6,8 @@
     <title><%= @page_title %></title>
     <%= csrf_meta_tags %>
 
+    <%= favicon_link_tag 'favicons/favicon.ico' %>
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -17,17 +19,16 @@
           <%= video_tag(
               'bg_video.mp4',
               id: 'background',
+              # size: "100x100",
               autoplay: true,
               loop: true,
               muted: true,
+              poster: 'home_bg.png',
             )
             %>
 
 
           <%= render 'shared/application_nav', location: 'top' %>
-          <br>
-          <%= source_helper('application') %>
-          <br>
 
           <%= yield %>
 
